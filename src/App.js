@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>
+            <TextField id="outlined-basic" label="Enter Site Link" varinat="outlined"/>
+            <Button variant="contained" color="primary">
+              Enter
+            </Button>
+            <TextField id="outlined-basic" label="Result" variant="outlined"/>
+          </p>
+        </header>
+      </div>
+    );
+  }
 }
-
 export default App;
