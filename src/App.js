@@ -17,25 +17,19 @@ class App extends Component {
     this.setState({input:event.target.value});
   };
 
-  onButtonSubmit = () => {
-    const domain_name = 'shorty.in/';
-    const randomstring = Math.random().toString(32).substring(2,6)+Math.random().toString(32).substring(2,6);
-    const new_url = domain_name+randomstring;
-    
-    this.setState({result_url:new_url}, () => {
-      console.log(this.state);});
-    
+  onButtonSubmit = () => {   
     fetch('http://localhost:3000/', {
       method:'post',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({
         org_url:this.state.input,
-        result_url:this.state.result_url
       })
-
     })
-  };
-
+      .then(res => res.json())
+      .then(data => {
+        this.setState({result_url:data})
+      })     
+};
   
   render(){
     const {result_url} = this.state;
