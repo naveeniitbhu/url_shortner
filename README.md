@@ -6,7 +6,7 @@ For backend server, refer my repository [url_server](https://github.com/naveenii
 ##### Tools used for creating the project:
   - React.js
   - Express.js, KNEX.js
-  - PostgreSQL
+  - PostgreSQL.
  
 
 
